@@ -13,11 +13,11 @@
     min-height: 700px;
     width: 100%;
     margin: 20px 0 20x 0;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .col-4{
-    background-color: yellow;
+    background-color: white;
     min-height: 700px;
     padding: 0;
 }
@@ -79,6 +79,14 @@ i{
 /* MESSAGES-SECTION  */
 
 .messages-section{
-    height: calc(100vh - 202px);
-    overflow: auto;
+    height: calc(100vh - 254px);
+    overflow: scroll;
+}
+
+
+/* CONTACT SECTION  */
+
+.contact-tag:hover{
+    background-color: rgb(214, 205, 205);
+    cursor: pointer;
 }
