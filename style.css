@@ -102,3 +102,16 @@ i{
     height: calc(100vh - 118px);
     overflow-y: scroll;
 }
+
+.message{
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.recived-message{
+    background-color: white;
+}
+
+.sent-message{
+    background-color: rgb(71, 218, 66);
+}
