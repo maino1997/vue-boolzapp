@@ -33,7 +33,7 @@
 /* CONTENT  */
 
 .inner-header{
-    background-color: lightgray;
+    background-color: rgb(241, 232, 232);
 }
 
 .inner-header-notes{
@@ -99,7 +99,7 @@ i{
 /* ACTIVE-MESSAGE-COL  */
 .message-body{
     background-image: url("mine.jpg");
-    height: calc(100vh - 118px);
+    height: calc(100vh - 198px);
     overflow-y: scroll;
 }
 
@@ -114,4 +114,23 @@ i{
 
 .sent-message{
     background-color: rgb(71, 218, 66);
+}
+
+footer{
+    min-height: 80px;
+    background-color: rgb(241, 232, 232);
+    padding: 0 20px;
+}
+
+footer input{
+    width: 90%;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    
+}
+
+footer .fas{
+    font-size: 2rem;
+    line-height: 80px;
 }
