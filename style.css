@@ -108,18 +108,32 @@ i{
     border-radius: 8px;
 }
 
-.recived-message{
-    background-color: white;
+.message-body .row{
+    margin-top: 20px;
 }
 
-.sent-message{
+.recived{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sent{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sent .content{
     background-color: rgb(71, 218, 66);
 }
 
+.recived .content{
+    background-color: white;
+   }
+
 footer{
     min-height: 80px;
-    background-color: rgb(241, 232, 232);
     padding: 0 20px;
+    background-color: rgb(241, 232, 232);
 }
 
 footer input{
