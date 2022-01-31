@@ -74,3 +74,11 @@ i{
     border: 0;
     width: 90%;
 }
+
+
+/* MESSAGES-SECTION  */
+
+.messages-section{
+    height: calc(100vh - 202px);
+    overflow: auto;
+}
