@@ -82,7 +82,7 @@ i{
 
 .messages-section{
     height: calc(100vh - 254px);
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 
@@ -97,3 +97,8 @@ i{
 
 
 /* ACTIVE-MESSAGE-COL  */
+.message-body{
+    background-image: url("mine.jpg");
+    height: calc(100vh - 118px);
+    overflow-y: scroll;
+}
