@@ -26,6 +26,7 @@
     background-color: green;
     min-height: 700px;
     padding: 0;
+    border-left: 1px solid blue;
 }
 
 
@@ -47,6 +48,7 @@
 
 .relative-icons .fas{
     line-height: 50px;
+    font-size: 1.4rem;
 }
 
 .desktop-notes{
@@ -90,3 +92,8 @@ i{
     background-color: rgb(214, 205, 205);
     cursor: pointer;
 }
+
+
+
+
+/* ACTIVE-MESSAGE-COL  */
