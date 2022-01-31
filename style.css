@@ -35,8 +35,42 @@
     background-color: lightgray;
 }
 
+.inner-header-notes{
+    background-color: rgb(98, 195, 233);
+}
+
 .icon{
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+
+.relative-icons .fas{
+    line-height: 50px;
+}
+
+.desktop-notes{
+    color: grey;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+i{
+    color: grey;
+}
+
+.filter-section{
+    background-color: white;
+}
+
+.input-cont{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 0 5px 0 5px;
+    padding: 20px 0;
+}
+
+.input-cont input{
+    border: 0;
+    width: 90%;
 }
