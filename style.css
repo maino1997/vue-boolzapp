@@ -2,7 +2,7 @@
 
 .background{
     height: 100vh;
-    background: linear-gradient(to bottom, rgb(4, 105, 75)  0%,rgb(4, 105, 75)   20%,rgb(204, 198, 198) 20%,rgb(204, 198, 198) 100%);
+    background: linear-gradient(to bottom, rgb(5, 143, 132)  0%,rgb(5, 143, 132)   20%,rgb(204, 198, 198) 20%,rgb(204, 198, 198) 100%);
 }
 
 
@@ -12,7 +12,6 @@
 .central-inner-content{
     width: 100%;
     margin: 20px 0 20x 0;
-    /* border-radius: 20px; */
     box-shadow: 0px 0px 10px rgba(0,0,0,.5)
 }
 
@@ -106,6 +105,7 @@ i{
 .message{
     padding: 15px;
     border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2)
 }
 
 .message-body .row{
