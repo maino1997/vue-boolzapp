@@ -4,3 +4,39 @@
     height: 100vh;
     background: linear-gradient(to bottom, rgb(4, 105, 75)  0%,rgb(4, 105, 75)   20%,rgb(204, 198, 198) 20%,rgb(204, 198, 198) 100%);
 }
+
+
+
+/* INNER-CONTENT  */
+
+.central-inner-content{
+    min-height: 700px;
+    width: 100%;
+    margin: 20px 0 20x 0;
+    background-color: red;
+}
+
+.col-4{
+    background-color: yellow;
+    min-height: 700px;
+    padding: 0;
+}
+
+.col-8{
+    background-color: green;
+    min-height: 700px;
+    padding: 0;
+}
+
+
+/* CONTENT  */
+
+.inner-header{
+    background-color: lightgray;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
