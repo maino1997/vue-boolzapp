@@ -1,0 +1,6 @@
+/* BACKGROUND  */
+
+.background{
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(4, 105, 75)  0%,rgb(4, 105, 75)   20%,rgb(204, 198, 198) 20%,rgb(204, 198, 198) 100%);
+}
