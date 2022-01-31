@@ -62,9 +62,12 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="inner-header d-flex justify-content-between">
-                                        <div class="user-info">
+                                        <div class="user-info d-flex align-items-center">
                                             <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
-                                            <span>{{user.name}}</span>
+                                            <div class="user-description">
+                                                <span>{{user.name}}</span>
+                                                <p class="last-access">Ultimo acesso oggi alle</p>
+                                            </div>
                                         </div>
                                         <div
                                             class="relative-icons color-gray d-flex justify-content-between aling-items-center">
@@ -79,17 +82,14 @@
                                             <div class="row">
                                                 <div class="col-12  recived">
                                                     <div class="content   message">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                                                        doloribus ea enim at facere, repellendus voluptas perferendis
-                                                        veniam magni adipisci, fuga cumque, impedit esse voluptatem
-                                                        explicabo. Itaque facilis alias officia?
+                                                        Ciao come va?
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12  sent">
                                                     <div class="content  message">
-                                                        ffsdgasdasdfadfasfdasdasdasfdasfasdf
+                                                        Tutto a posto, te?
                                                     </div>
                                                 </div>
                                             </div>
