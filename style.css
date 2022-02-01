@@ -21,7 +21,6 @@
 }
 
 .col-8{
-    background-color: green;
     padding: 0;
     border-left: 1px solid blue;
 }
@@ -90,7 +89,7 @@ p{
 
 .messages-section{
     height: calc(100vh - 274px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 
@@ -108,7 +107,7 @@ p{
 .message-body{
     background-image: url("mine.jpg");
     height: calc(100vh - 198px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .message{

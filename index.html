@@ -20,93 +20,87 @@
 <body>
     <div id="root">
         <div class="background d-flex aling-items-center">
-            <div class="central-content col-12 d-flex aling-items-center">
-                <div class="container d-flex align-items-center">
-                    <div class="central-inner-content">
-                        <div class="container-fluid">
-                            <div class="row p-0">
-                                <div class="col-4">
-                                    <div class="inner-header d-flex justify-content-between">
-                                        <div class="user-info">
-                                            <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
+            <div class="container d-flex align-items-center">
+                <div class="central-inner-content">
+                    <div class="container-fluid">
+                        <div class="row p-0 h-100">
+                            <div class="col-4">
+                                <section class="inner-header d-flex justify-content-between">
+                                    <div class="user-info">
+                                        <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
+                                        <span>{{user.name}}</span>
+                                    </div>
+                                    <div
+                                        class="relative-icons color-gray d-flex justify-content-between aling-items-center">
+                                        <i class="fas fa-redo m-2"></i>
+                                        <i class="fas fa-comment-alt m-2"></i>
+                                        <i class="fas fa-ellipsis-v m-2"></i>
+                                    </div>
+                                </section>
+
+                                <div class="inner-header-notes d-flex ">
+                                    <img src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-bell-icon-png-image_927119.jpg"
+                                        alt="bell" class="icon m-2">
+                                    <div class="notify-message">
+                                        <h6>Ricevi notifiche di un nuovo messaggio</h6>
+                                        <p><span class="desktop-notes">Attiva notifiche desktop</span></p>
+                                    </div>
+                                </div>
+                                <div class="filter-section">
+                                    <div class="input-cont">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" id="" placeholder="Cerca o inizia una nuova chat">
+                                    </div>
+                                </div>
+
+                                <section class="messages-section">
+                                    <div v-for="(item, index) in contacts" @click="isActive(item)" class="contact-tag">
+                                        <img :src="`img/avatar${item.avatar}.jpg`" alt="avatar_1" class="icon m-2">
+                                        <span>{{item.name}}</span>
+                                    </div>
+                                </section>
+                            </div>
+
+
+                            <div class="col-8">
+                                <section class="inner-header d-flex justify-content-between">
+                                    <div class="user-info d-flex align-items-center">
+                                        <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
+                                        <div class="user-description">
                                             <span>{{user.name}}</span>
-                                        </div>
-                                        <div
-                                            class="relative-icons color-gray d-flex justify-content-between aling-items-center">
-                                            <i class="fas fa-redo m-2"></i>
-                                            <i class="fas fa-comment-alt m-2"></i>
-                                            <i class="fas fa-ellipsis-v m-2"></i>
+                                            <p class="last-access">Ultimo acesso oggi alle</p>
                                         </div>
                                     </div>
-                                    <div class="inner-header-notes d-flex ">
-                                        <img src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-bell-icon-png-image_927119.jpg"
-                                            alt="bell" class="icon m-2">
-                                        <div class="notify-message">
-                                            <h6>Ricevi notifiche di un nuovo messaggio</h6>
-                                            <p><span class="desktop-notes">Attiva notifiche desktop</span></p>
-                                        </div>
+                                    <div
+                                        class="relative-icons color-gray d-flex justify-content-between aling-items-center">
+                                        <i class="fas fa-search m-2"></i>
+                                        <i class="fas fa-paperclip m-2"></i>
+                                        <i class="fas fa-ellipsis-v m-2"></i>
                                     </div>
-                                    <div class="filter-section">
-                                        <div class="input-cont">
-                                            <i class="fas fa-search"></i>
-                                            <input type="text" id="" placeholder="Cerca o inizia una nuova chat">
-                                        </div>
-                                    </div>
-                                    <div class="messages-section">
-                                        <div v-for="(item, index) in contacts" class="contact-tag">
-                                            <img :src="`img/avatar${item.avatar}.jpg`" alt="avatar_1" class="icon m-2">
-                                            <span>{{item.name}}</span>
-                                        </div>
+                                </section>
 
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <div class="inner-header d-flex justify-content-between">
-                                        <div class="user-info d-flex align-items-center">
-                                            <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
-                                            <div class="user-description">
-                                                <span>{{user.name}}</span>
-                                                <p class="last-access">Ultimo acesso oggi alle</p>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="relative-icons color-gray d-flex justify-content-between aling-items-center">
-                                            <i class="fas fa-search m-2"></i>
-                                            <i class="fas fa-paperclip m-2"></i>
-                                            <i class="fas fa-ellipsis-v m-2"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="message-body">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12  recived">
-                                                    <div class="content   message">
-                                                        Ciao come va?
-                                                    </div>
+                                <section class="message-body">
+                                    <div class="container">
+                                        <div v-for="item in contacts[0].messages" class="row">
+                                            <div class="col-12 sent">
+                                                <div class="content   message">
+                                                    {{item.text}}
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12  sent">
-                                                    <div class="content  message">
-                                                        Tutto a posto, te?
-                                                    </div>
-                                                </div>
-                                            </div>
-
                                         </div>
+
+
                                     </div>
-                                    <footer class="d-flex align-items-center justify-content-between">
-                                        <i class="fas fa-smile"></i>
-                                        <input type="text" placeholder="Inserisci un messaggio qui">
-                                        <i class="fas fa-microphone"></i>
-                                    </footer>
-                                </div>
+                                </section>
+                                <footer class="d-flex align-items-center justify-content-between">
+                                    <i class="fas fa-smile"></i>
+                                    <input type="text" placeholder="Inserisci un messaggio qui">
+                                    <i class="fas fa-microphone"></i>
+                                </footer>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
