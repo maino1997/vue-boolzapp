@@ -126,6 +126,8 @@ var app = new Vue({
             }
 
             this.contacts[this.currentIndex].messages.push(newMsg);
+
+            this.newMessage = "";
         }
     }
 });

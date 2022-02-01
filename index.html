@@ -95,8 +95,9 @@
                                 </section>
                                 <footer class="d-flex align-items-center justify-content-between">
                                     <i class="fas fa-smile"></i>
-                                    <input type="text" placeholder="Inserisci un messaggio qui" v-model="newMessage">
-                                    <i class="fas fa-microphone" @click="newMsgUp"></i>
+                                    <input type="text" placeholder="Inserisci un messaggio qui" v-model="newMessage"
+                                        @keyup.enter="newMsgUp">
+                                    <i class="fas fa-microphone"></i>
                                 </footer>
                             </div>
                         </div>
