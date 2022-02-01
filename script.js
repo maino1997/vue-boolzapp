@@ -128,6 +128,20 @@ var app = new Vue({
             this.contacts[this.currentIndex].messages.push(newMsg);
 
             this.newMessage = "";
-        }
+
+            setTimeout(this.autoAnswer, 2000);
+        },
+
+        autoAnswer() {
+            const autoMsg = {
+                date: '20/03/2020 16:30:00',
+                text: 'ok',
+                status: 'received'
+            }
+
+            this.contacts[this.currentIndex].messages.push(autoMsg);
+        },
+
+
     }
 });
