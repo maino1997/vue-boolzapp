@@ -54,7 +54,7 @@
                                 </div>
 
                                 <section class="messages-section">
-                                    <div v-for="(item, index) in contacts" @click="currentIndexUpdate(index)"
+                                    <div v-for="(item, index) in contacts" @click="currentIndexUpdate(index , item)"
                                         class="contact-tag">
                                         <img :src="`img/avatar${item.avatar}.jpg`" alt="avatar_1" class="icon m-2">
                                         <span>{{item.name}}</span>
@@ -65,10 +65,11 @@
 
                             <div class="col-8">
                                 <section class="inner-header d-flex justify-content-between">
-                                    <div class="user-info d-flex align-items-center">
-                                        <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
+                                    <div v-for="(contact, index) in contacts" v-if="showContact(index)"
+                                        class="user-info d-flex align-items-center">
+                                        <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1" class="icon m-2">
                                         <div class="user-description">
-                                            <span>{{user.name}}</span>
+                                            <span>{{contact.name}}</span>
                                             <p class="last-access">Ultimo acesso oggi alle</p>
                                         </div>
                                     </div>

@@ -15,7 +15,7 @@ var app = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
-                visible: true,
+                visible: false,
                 messages: [{
                     date: '10/01/2020 15:30:55',
                     text: 'Hai portato a spasso il cane?',
@@ -36,7 +36,7 @@ var app = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: true,
+                visible: false,
                 messages: [{
                     date: '20/03/2020 16:30:00',
                     text: 'Ciao come stai?',
@@ -57,7 +57,7 @@ var app = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: true,
+                visible: false,
                 messages: [{
                     date: '28/03/2020 10:10:40',
                     text: 'La Marianna va in campagna',
@@ -78,7 +78,7 @@ var app = new Vue({
             {
                 name: 'Luisa',
                 avatar: '_4',
-                visible: true,
+                visible: false,
                 messages: [{
                     date: '10/01/2020 15:30:55',
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -94,17 +94,6 @@ var app = new Vue({
         ],
     },
     methods: {
-        activeChange(item) {
-            contact.visible = true;
-        },
-
-        isActive(item) {
-            if (item.visible === true) {
-                return true;
-            } else {
-                return false;
-            }
-        },
 
         sentRecived(item) {
             if (item.status === 'received') {
@@ -114,8 +103,17 @@ var app = new Vue({
             }
         },
 
+        showContact(index) {
+            if (this.currentIndex === index) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
         currentIndexUpdate(index) {
             this.currentIndex = index;
+
         },
 
         newMsgUp() {
@@ -141,7 +139,6 @@ var app = new Vue({
 
             this.contacts[this.currentIndex].messages.push(autoMsg);
         },
-
 
     }
 });
