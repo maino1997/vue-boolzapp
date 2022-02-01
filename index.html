@@ -54,7 +54,8 @@
                                 </div>
 
                                 <section class="messages-section">
-                                    <div v-for="(item, index) in contacts" @click="isActive(item)" class="contact-tag">
+                                    <div v-for="(item, index) in contacts" @click="currentIndexUpdate(index)"
+                                        class="contact-tag">
                                         <img :src="`img/avatar${item.avatar}.jpg`" alt="avatar_1" class="icon m-2">
                                         <span>{{item.name}}</span>
                                     </div>
@@ -81,10 +82,10 @@
 
                                 <section class="message-body">
                                     <div class="container">
-                                        <div v-for="item in contacts[0].messages" class="row">
-                                            <div class="col-12 sent">
+                                        <div v-for="(message , index) in contacts[currentIndex].messages" class="row">
+                                            <div class="col-12" :class="sentRecived(message)">
                                                 <div class="content   message">
-                                                    {{item.text}}
+                                                    {{message.text}}
                                                 </div>
                                             </div>
                                         </div>
@@ -94,8 +95,8 @@
                                 </section>
                                 <footer class="d-flex align-items-center justify-content-between">
                                     <i class="fas fa-smile"></i>
-                                    <input type="text" placeholder="Inserisci un messaggio qui">
-                                    <i class="fas fa-microphone"></i>
+                                    <input type="text" placeholder="Inserisci un messaggio qui" v-model="newMessage">
+                                    <i class="fas fa-microphone" @click="newMsgUp"></i>
                                 </footer>
                             </div>
                         </div>

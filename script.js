@@ -5,6 +5,8 @@ Vue.config.devtools = true;
 var app = new Vue({
     el: '#root',
     data: {
+        newMessage: "",
+        currentIndex: 2,
         user: {
             name: 'Sasha Mainardi',
             avatar: '_io'
@@ -92,8 +94,38 @@ var app = new Vue({
         ],
     },
     methods: {
-        isActive(contact) {
+        activeChange(item) {
             contact.visible = true;
         },
+
+        isActive(item) {
+            if (item.visible === true) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+        sentRecived(item) {
+            if (item.status === 'received') {
+                return 'recived';
+            } else {
+                return 'sent';
+            }
+        },
+
+        currentIndexUpdate(index) {
+            this.currentIndex = index;
+        },
+
+        newMsgUp() {
+            const newMsg = {
+                date: '20/03/2020 16:30:00',
+                text: this.newMessage,
+                status: 'sent'
+            }
+
+            this.contacts[this.currentIndex].messages.push(newMsg);
+        }
     }
 });
