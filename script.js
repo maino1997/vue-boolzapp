@@ -17,17 +17,17 @@ var app = new Vue({
                 avatar: '_1',
                 visible: false,
                 messages: [{
-                    date: '10/01/2020 15:30:55',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Hai portato a spasso il cane?',
                     status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Ricordati di dargli da mangiare',
                     status: 'sent'
                 },
                 {
-                    date: '10/01/2020 16:15:22',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Tutto fatto!',
                     status: 'received'
                 }
@@ -38,17 +38,17 @@ var app = new Vue({
                 avatar: '_2',
                 visible: false,
                 messages: [{
-                    date: '20/03/2020 16:30:00',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Ciao come stai?',
                     status: 'sent'
                 },
                 {
-                    date: '20/03/2020 16:30:55',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Bene grazie! Stasera ci vediamo?',
                     status: 'received'
                 },
                 {
-                    date: '20/03/2020 16:35:00',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                     status: 'received'
                 }
@@ -59,17 +59,17 @@ var app = new Vue({
                 avatar: '_3',
                 visible: false,
                 messages: [{
-                    date: '28/03/2020 10:10:40',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'La Marianna va in campagna',
                     status: 'received'
                 },
                 {
-                    date: '28/03/2020 10:20:10',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Sicuro di non aver sbagliato chat?',
                     status: 'sent'
                 },
                 {
-                    date: '28/03/2020 16:15:22',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Ah scusa!',
                     status: 'received'
                 }
@@ -80,12 +80,12 @@ var app = new Vue({
                 avatar: '_4',
                 visible: false,
                 messages: [{
-                    date: '10/01/2020 15:30:55',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
+                    date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                     text: 'Si, ma preferirei andare al cinema',
                     status: 'received'
                 }
@@ -118,7 +118,7 @@ var app = new Vue({
 
         newMsgUp() {
             const newMsg = {
-                date: '20/03/2020 16:30:00',
+                date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                 text: this.newMessage,
                 status: 'sent'
             }
@@ -132,7 +132,7 @@ var app = new Vue({
 
         autoAnswer() {
             const autoMsg = {
-                date: '20/03/2020 16:30:00',
+                date: `${new Date().getMonth()}/${new Date().getDay()}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                 text: 'ok',
                 status: 'received'
             }

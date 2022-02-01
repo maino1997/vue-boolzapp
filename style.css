@@ -120,6 +120,10 @@ p{
     margin-top: 20px;
 }
 
+.content{
+    position: relative;
+}
+
 .recived{
     display: flex;
     justify-content: flex-start;
@@ -132,11 +136,20 @@ p{
 
 .sent .content{
     background-color: rgb(71, 218, 66);
+    min-width: 70px;
 }
 
 .recived .content{
     background-color: white;
+    min-width: 70px;
    }
+
+.time{
+    font-size: 8px;
+    color: grey;
+    position: absolute;
+    right: 3px;
+}
 
 footer{
     min-height: 80px;
