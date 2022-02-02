@@ -190,3 +190,10 @@ footer .fas{
     background-color: white;
     border: 1px solid black;
 }
+
+/* LAST-MESSAGE */
+
+.last-message{
+    font-size: 13px;
+    padding-left: 10px;
+}

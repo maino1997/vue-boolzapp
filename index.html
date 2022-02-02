@@ -54,11 +54,14 @@
                                     </div>
                                 </div>
 
-                                <section class="messages-section">
+                                <section class="messages-section px-2">
                                     <div v-for="(item, index) in contacts" @click="currentIndexUpdate(index , item)"
                                         v-if="isVisible(item)" class="contact-tag">
                                         <img :src="`img/avatar${item.avatar}.jpg`" alt="avatar_1" class="icon m-2">
                                         <span>{{item.name}}</span>
+                                        <p v-for="(message, indice) in contacts[index].messages"
+                                            v-if="indice === contacts[index].messages.length - 1 " class="last-message">
+                                            {{ message.text}}</p>
                                     </div>
                                 </section>
                             </div>

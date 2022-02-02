@@ -147,17 +147,15 @@ var app = new Vue({
 
             console.log(newName);
 
+
+
             if (newName.includes(this.filterInput)) {
                 contact.visible = true;
             } else {
                 contact.visible = false;
             }
 
-            if (contact.visible === true) {
-                return true;
-            } else {
-                return false;
-            }
+            return contact.visible;
         },
 
         dropAppear(index) {
