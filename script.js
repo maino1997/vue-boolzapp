@@ -6,6 +6,7 @@ var app = new Vue({
     el: '#root',
     data: {
         newMessage: "",
+        filterInput: "",
         currentIndex: 2,
         user: {
             name: 'Sasha Mainardi',
@@ -139,6 +140,28 @@ var app = new Vue({
 
             this.contacts[this.currentIndex].messages.push(autoMsg);
         },
+
+        isVisible(contact) {
+            const nome = contact.name;
+            const newName = nome.toLowerCase();
+
+            console.log(newName);
+
+            if (newName.includes(this.filterInput)) {
+                contact.visible = true;
+            } else {
+                contact.visible = false;
+            }
+
+            if (contact.visible === true) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+        changeVisible() {
+        }
 
     }
 });

@@ -49,13 +49,14 @@
                                 <div class="filter-section">
                                     <div class="input-cont">
                                         <i class="fas fa-search"></i>
-                                        <input type="text" id="" placeholder="Cerca o inizia una nuova chat">
+                                        <input type="text" id="" placeholder="Cerca o inizia una nuova chat"
+                                            v-model="filterInput">
                                     </div>
                                 </div>
 
                                 <section class="messages-section">
                                     <div v-for="(item, index) in contacts" @click="currentIndexUpdate(index , item)"
-                                        class="contact-tag">
+                                        v-if="isVisible(item)" class="contact-tag">
                                         <img :src="`img/avatar${item.avatar}.jpg`" alt="avatar_1" class="icon m-2">
                                         <span>{{item.name}}</span>
                                     </div>
