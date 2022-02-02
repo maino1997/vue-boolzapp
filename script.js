@@ -20,17 +20,20 @@ var app = new Vue({
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Hai portato a spasso il cane?',
-                    status: 'sent'
+                    status: 'sent',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ricordati di dargli da mangiare',
-                    status: 'sent'
+                    status: 'sent',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Tutto fatto!',
-                    status: 'received'
+                    status: 'received',
+                    dropDownShow: false,
                 }
                 ],
             },
@@ -41,17 +44,20 @@ var app = new Vue({
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ciao come stai?',
-                    status: 'sent'
+                    status: 'sent',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Bene grazie! Stasera ci vediamo?',
-                    status: 'received'
+                    status: 'received',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                    status: 'received'
+                    status: 'received',
+                    dropDownShow: false,
                 }
                 ],
             },
@@ -62,17 +68,20 @@ var app = new Vue({
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'La Marianna va in campagna',
-                    status: 'received'
+                    status: 'received',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Sicuro di non aver sbagliato chat?',
-                    status: 'sent'
+                    status: 'sent',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ah scusa!',
-                    status: 'received'
+                    status: 'received',
+                    dropDownShow: false,
                 }
                 ],
             },
@@ -83,12 +92,14 @@ var app = new Vue({
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
-                    status: 'sent'
+                    status: 'sent',
+                    dropDownShow: false,
                 },
                 {
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Si, ma preferirei andare al cinema',
-                    status: 'received'
+                    status: 'received',
+                    dropDownShow: false,
                 }
                 ],
             },
@@ -121,7 +132,8 @@ var app = new Vue({
             const newMsg = {
                 date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                 text: this.newMessage,
-                status: 'sent'
+                status: 'sent',
+                dropDownShow: false,
             }
 
             this.contacts[this.currentIndex].messages.push(newMsg);
@@ -135,7 +147,8 @@ var app = new Vue({
             const autoMsg = {
                 date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
                 text: 'ok',
-                status: 'received'
+                status: 'received',
+                dropDownShow: false,
             }
 
             this.contacts[this.currentIndex].messages.push(autoMsg);
@@ -158,25 +171,46 @@ var app = new Vue({
             return contact.visible;
         },
 
-        dropAppear(index) {
-            const dropElement = document.querySelectorAll(".dropdown");
 
 
-            console.log(dropElement);
+        // LOGICA PLAIN-JAVASCRIPT 
+        // dropAppear(index) {
+        //     const dropElement = document.querySelectorAll(".dropdown");
 
-            for (let i = 0; i < dropElement.length; i++) {
-                const currentElement = dropElement[i];
 
-                if (i === index) {
-                    if (currentElement.style.display === "none") {
-                        currentElement.style.display = "block";
-                    } else {
-                        currentElement.style.display = "none";
-                    }
-                }
+        //     console.log(dropElement);
+
+        //     for (let i = 0; i < dropElement.length; i++) {
+        //         const currentElement = dropElement[i];
+
+        //         if (i === index) {
+        //             if (currentElement.style.display === "none") {
+        //                 currentElement.style.display = "block";
+        //             } else {
+        //                 currentElement.style.display = "none";
+        //             }
+        //         }
+        //     }
+
+        // },
+
+
+        isShow(message) {
+            if (message.dropDownShow) {
+                return true;
+            } else {
+                return false;
             }
-
         },
+
+        showChange(message) {
+            if (message.dropDownShow === true) {
+                message.dropDownShow = false;
+            } else {
+                message.dropDownShow = true;
+            }
+        },
+
 
         deleteMsg(message) {
             message.text = "Questo messaggio è stato eliminato";

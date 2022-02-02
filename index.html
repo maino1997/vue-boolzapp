@@ -87,16 +87,16 @@
 
                                 <section class="message-body">
                                     <div class="container">
-                                        <div v-for="(message , index) in contacts[currentIndex].messages" class="row"
-                                            @click="dropAppear(index)">
+                                        <div v-for="(message , index) in contacts[currentIndex].messages" class="row">
                                             <div class="col-12" :class="sentRecived(message)">
-                                                <div class="content   message">
+                                                <div class="content   message" @click="showChange(message)">
                                                     {{message.text}}
                                                     <p class="time">{{message.date}}</p>
-                                                    <div class="dropdown" style="display: none;">
-                                                        <ul class="list-unstyled">
-                                                            <li>Info Messaggio</li>
-                                                            <li @click="deleteMsg(message)">Cancella Messaggio</li>
+                                                    <div class="dropdown" :class="{show : isShow(message)}">
+                                                        <ul class="list-unstyled p-2">
+                                                            <li class="delete">Info Messaggio</li>
+                                                            <li @click="deleteMsg(message)" class="delete">Cancella
+                                                                Messaggio</li>
                                                         </ul>
                                                     </div>
                                                 </div>
