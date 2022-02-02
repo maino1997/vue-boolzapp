@@ -129,16 +129,18 @@ var app = new Vue({
         },
 
         newMsgUp() {
-            const newMsg = {
-                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                text: this.newMessage,
-                status: 'sent',
-                dropDownShow: false,
-            }
+            // const newMsg = {
+            //     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+            //     text: this.newMessage,
+            //     status: 'sent',
+            //     dropDownShow: false,
+            // }
+
 
             if (!this.newMessage) {
                 return;
             } else {
+                const newMsg = this.nuovoMessaggio(this.newMessage, 'sent', false)
                 this.contacts[this.currentIndex].messages.push(newMsg);
 
                 this.newMessage = "";
@@ -148,17 +150,17 @@ var app = new Vue({
         },
 
         autoAnswer() {
-            // const autoMsg = {
-            //     date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
-            //     text: 'ok',
-            //     status: 'received',
-            //     dropDownShow: false,
-            // }
+            const autoMsg = {
+                date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
+                text: 'ok',
+                status: 'received',
+                dropDownShow: false,
+            }
 
-            const nuovo = this.nuovoMessaggio('ok', 'received', false);
-            console.log(nuovo);
+            // const nuovo = this.nuovoMessaggio('ok', 'received', false);
+            // console.log(nuovo);
 
-            this.contacts[this.currentIndex].messages.push(nuovo);
+            this.contacts[this.currentIndex].messages.push(autoMsg);
         },
 
 
