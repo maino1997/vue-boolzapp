@@ -129,14 +129,6 @@ var app = new Vue({
         },
 
         newMsgUp() {
-            // const newMsg = {
-            //     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-            //     text: this.newMessage,
-            //     status: 'sent',
-            //     dropDownShow: false,
-            // }
-
-
             if (!this.newMessage) {
                 return;
             } else {
@@ -150,17 +142,8 @@ var app = new Vue({
         },
 
         autoAnswer() {
-            const autoMsg = {
-                date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
-                text: 'ok',
-                status: 'received',
-                dropDownShow: false,
-            }
-
-            // const nuovo = this.nuovoMessaggio('ok', 'received', false);
-            // console.log(nuovo);
-
-            this.contacts[this.currentIndex].messages.push(autoMsg);
+            const nuovo = this.nuovoMessaggio('ok', 'received', false);
+            this.contacts[this.currentIndex].messages.push(nuovo);
         },
 
 
@@ -171,17 +154,19 @@ var app = new Vue({
                 status: status,
                 dropDownShow: show,
             }
+            return newMsg;
         },
 
         isVisible(contact) {
             const nome = contact.name;
             const newName = nome.toLowerCase();
+            const inputValue = this.filterInput.toLowerCase().trim();
 
             console.log(newName);
 
 
 
-            if (newName.includes(this.filterInput)) {
+            if (newName.includes(inputValue)) {
                 contact.visible = true;
             } else {
                 contact.visible = false;
