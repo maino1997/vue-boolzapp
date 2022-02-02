@@ -105,8 +105,11 @@ var app = new Vue({
             },
         ],
     },
+
+
     methods: {
 
+        // Assing classes if the message was sent or received
         sentRecived(item) {
             if (item.status === 'received') {
                 return 'recived';
@@ -115,6 +118,8 @@ var app = new Vue({
             }
         },
 
+
+        // If the index of the v-for cicle is equal to the variable currentIndex the conversation becomes visible 
         showContact(index) {
             if (this.currentIndex === index) {
                 return true;
@@ -123,11 +128,25 @@ var app = new Vue({
             }
         },
 
+
+        // Set the currentIndex equal to the index of the v-for cicle at click 
         currentIndexUpdate(index) {
             this.currentIndex = index;
 
         },
 
+        // Creates a new object message and returns it 
+        nuovoMessaggio(text, status, show) {
+            const newMsg = {
+                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                text: text,
+                status: status,
+                dropDownShow: show,
+            }
+            return newMsg;
+        },
+
+        // Pushes in the list the new sent message 
         newMsgUp() {
             if (!this.newMessage) {
                 return;
@@ -141,22 +160,14 @@ var app = new Vue({
             }
         },
 
+        // Pushes an automatic received message in the list 
         autoAnswer() {
             const nuovo = this.nuovoMessaggio('ok', 'received', false);
             this.contacts[this.currentIndex].messages.push(nuovo);
         },
 
 
-        nuovoMessaggio(text, status, show) {
-            const newMsg = {
-                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                text: text,
-                status: status,
-                dropDownShow: show,
-            }
-            return newMsg;
-        },
-
+        // Filter the input value and decides if the contact is visible or not 
         isVisible(contact) {
             const nome = contact.name;
             const newName = nome.toLowerCase();
@@ -177,7 +188,7 @@ var app = new Vue({
 
 
 
-        // LOGICA PLAIN-JAVASCRIPT 
+        // LOGICA PLAIN-JAVASCRIPT PER FAR APPARIRE IL DROPDOWN
         // dropAppear(index) {
         //     const dropElement = document.querySelectorAll(".dropdown");
 
@@ -199,6 +210,7 @@ var app = new Vue({
         // },
 
 
+        // If the property dropDownShow is true the menu is visible 
         isShow(message) {
             if (message.dropDownShow) {
                 return true;
@@ -207,6 +219,7 @@ var app = new Vue({
             }
         },
 
+        // Set the dropDownShow property to true or false on the click 
         showChange(message) {
             if (message.dropDownShow === true) {
                 message.dropDownShow = false;
@@ -215,7 +228,7 @@ var app = new Vue({
             }
         },
 
-
+        // Change the text in the message to tell that is was deleted 
         deleteMsg(message) {
             message.text = "Questo messaggio è stato eliminato";
         }
