@@ -189,9 +189,10 @@ footer .fas{
     position: absolute;
     z-index: 1;
     top: 50px;
-    right: 10px;
+    left: 0;
     background-color: white;
-    border: 1px solid black;
+    border: 0.5px solid black;
+    border-radius: 5px;
 }
 
 

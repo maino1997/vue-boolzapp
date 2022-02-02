@@ -7,7 +7,7 @@ var app = new Vue({
     data: {
         newMessage: "",
         filterInput: "",
-        currentIndex: 2,
+        currentIndex: 0,
         user: {
             name: 'Sasha Mainardi',
             avatar: '_io'
@@ -136,11 +136,15 @@ var app = new Vue({
                 dropDownShow: false,
             }
 
-            this.contacts[this.currentIndex].messages.push(newMsg);
+            if (!this.newMessage) {
+                return;
+            } else {
+                this.contacts[this.currentIndex].messages.push(newMsg);
 
-            this.newMessage = "";
+                this.newMessage = "";
 
-            setTimeout(this.autoAnswer, 2000);
+                setTimeout(this.autoAnswer, 2000);
+            }
         },
 
         autoAnswer() {
