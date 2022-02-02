@@ -1,10 +1,20 @@
+/* GENERALS  */
+
+i{
+    color: grey;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+
 /* BACKGROUND  */
 
 .background{
     height: 100vh;
     background: linear-gradient(to bottom, rgb(5, 143, 132)  0%,rgb(5, 143, 132)   20%,rgb(204, 198, 198) 20%,rgb(204, 198, 198) 100%);
 }
-
 
 
 /* INNER-CONTENT  */
@@ -56,14 +66,6 @@
     text-decoration: underline;
 }
 
-i{
-    color: grey;
-}
-
-p{
-    margin-bottom: 0;
-}
-
 .last-access{
     font-size: 10px;
     color: grey;
@@ -86,13 +88,12 @@ p{
 }
 
 
-/* MESSAGES-SECTION  */
+/*  CONTACTS-SECTION  */
 
-.messages-section{
+ .contacts-section{
     height: calc(100vh - 274px);
     overflow-y: auto;
-}
-
+} 
 
 /* CONTACT SECTION  */
 
@@ -157,6 +158,9 @@ p{
     position: absolute;
     right: 3px;
 }
+
+
+/* FOOTER  */
 
 footer{
     min-height: 80px;
