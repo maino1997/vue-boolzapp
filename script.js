@@ -19,18 +19,21 @@ var app = new Vue({
                 visible: true,
                 messages: [{
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Hai portato a spasso il cane?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ricordati di dargli da mangiare',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Tutto fatto!',
                     status: 'received',
                     dropDownShow: false,
@@ -43,18 +46,21 @@ var app = new Vue({
                 visible: true,
                 messages: [{
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ciao come stai?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Bene grazie! Stasera ci vediamo?',
                     status: 'received',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                     status: 'received',
                     dropDownShow: false,
@@ -67,18 +73,21 @@ var app = new Vue({
                 visible: true,
                 messages: [{
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'La Marianna va in campagna',
                     status: 'received',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Sicuro di non aver sbagliato chat?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ah scusa!',
                     status: 'received',
                     dropDownShow: false,
@@ -91,12 +100,14 @@ var app = new Vue({
                 visible: true,
                 messages: [{
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Si, ma preferirei andare al cinema',
                     status: 'received',
                     dropDownShow: false,
@@ -139,6 +150,7 @@ var app = new Vue({
         nuovoMessaggio(text, status, show) {
             const newMsg = {
                 date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                hour: `${new Date().getHours()}:${new Date().getMinutes()}`,
                 text: text,
                 status: status,
                 dropDownShow: show,

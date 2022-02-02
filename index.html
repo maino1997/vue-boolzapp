@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="filter-section">
-                                    <div class="input-cont">
+                                    <div class="input-cont px-3">
                                         <i class="fas fa-search"></i>
                                         <input type="text" id="" placeholder="Cerca o inizia una nuova chat"
                                             v-model="filterInput">
@@ -68,7 +68,8 @@
                                         <span>{{item.name}}</span>
                                         <p v-for="(message, indice) in contacts[index].messages"
                                             v-if="indice === contacts[index].messages.length - 1 " class="last-message">
-                                            {{ message.text}}</p>
+                                            {{ message.text}} <time class="last-time">{{message.hour}}</time>
+                                        </p>
                                     </div>
                                 </section>
                             </div>
@@ -100,7 +101,7 @@
                                     <div class="container">
                                         <div v-for="(message , index) in contacts[currentIndex].messages" class="row">
                                             <div class="col-12" :class="sentRecived(message)">
-                                                <div class="content   message" @click="showChange(message)">
+                                                <div class="content message my-3" @click="showChange(message)">
                                                     {{message.text}}
                                                     <p class="time">{{message.date}}</p>
                                                     <div class="dropdown" :class="{show : isShow(message)}">
