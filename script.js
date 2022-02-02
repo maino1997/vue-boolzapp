@@ -18,19 +18,19 @@ var app = new Vue({
                 avatar: '_1',
                 visible: true,
                 messages: [{
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Hai portato a spasso il cane?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Ricordati di dargli da mangiare',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Tutto fatto!',
                     status: 'received',
                     dropDownShow: false,
@@ -42,19 +42,19 @@ var app = new Vue({
                 avatar: '_2',
                 visible: true,
                 messages: [{
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Ciao come stai?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Bene grazie! Stasera ci vediamo?',
                     status: 'received',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                     status: 'received',
                     dropDownShow: false,
@@ -66,19 +66,19 @@ var app = new Vue({
                 avatar: '_3',
                 visible: true,
                 messages: [{
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'La Marianna va in campagna',
                     status: 'received',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Sicuro di non aver sbagliato chat?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Ah scusa!',
                     status: 'received',
                     dropDownShow: false,
@@ -90,13 +90,13 @@ var app = new Vue({
                 avatar: '_4',
                 visible: true,
                 messages: [{
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent',
                     dropDownShow: false,
                 },
                 {
-                    date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Si, ma preferirei andare al cinema',
                     status: 'received',
                     dropDownShow: false,
@@ -130,7 +130,7 @@ var app = new Vue({
 
         newMsgUp() {
             const newMsg = {
-                date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
+                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                 text: this.newMessage,
                 status: 'sent',
                 dropDownShow: false,
@@ -148,14 +148,27 @@ var app = new Vue({
         },
 
         autoAnswer() {
-            const autoMsg = {
-                date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
-                text: 'ok',
-                status: 'received',
-                dropDownShow: false,
-            }
+            // const autoMsg = {
+            //     date: `${new Date().getMonth()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}.${new Date().getMinutes()}`,
+            //     text: 'ok',
+            //     status: 'received',
+            //     dropDownShow: false,
+            // }
 
-            this.contacts[this.currentIndex].messages.push(autoMsg);
+            const nuovo = this.nuovoMessaggio('ok', 'received', false);
+            console.log(nuovo);
+
+            this.contacts[this.currentIndex].messages.push(nuovo);
+        },
+
+
+        nuovoMessaggio(text, status, show) {
+            const newMsg = {
+                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                text: text,
+                status: status,
+                dropDownShow: show,
+            }
         },
 
         isVisible(contact) {

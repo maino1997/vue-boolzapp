@@ -141,13 +141,13 @@ p{
 
 .sent .content{
     background-color: rgb(71, 218, 66);
-    min-width: 70px;
+    min-width: 90px;
     cursor: pointer;
 }
 
 .recived .content{
     background-color: white;
-    min-width: 70px;
+    min-width: 90px;
     cursor: pointer;
    }
 
