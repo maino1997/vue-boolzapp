@@ -23,6 +23,7 @@
 .col-8{
     padding: 0;
     border-left: 1px solid blue;
+    position: relative;
 }
 
 
@@ -106,7 +107,7 @@ p{
 /* ACTIVE-MESSAGE-COL  */
 .message-body{
     background-image: url("mine.jpg");
-    height: calc(100vh - 198px);
+    height: calc(100vh - 146px);
     overflow-y: auto;
 }
 
@@ -118,6 +119,10 @@ p{
 
 .message-body .row{
     margin-top: 20px;
+}
+
+.active{
+    background-color: grey;
 }
 
 .content{
@@ -155,6 +160,10 @@ footer{
     min-height: 80px;
     padding: 0 20px;
     background-color: rgb(241, 232, 232);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 footer input{

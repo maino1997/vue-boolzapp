@@ -15,7 +15,7 @@ var app = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Hai portato a spasso il cane?',
@@ -36,7 +36,7 @@ var app = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Ciao come stai?',
@@ -57,7 +57,7 @@ var app = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'La Marianna va in campagna',
@@ -78,7 +78,7 @@ var app = new Vue({
             {
                 name: 'Luisa',
                 avatar: '_4',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}   ${new Date().getHours()}:${new Date().getMinutes()}`,
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
