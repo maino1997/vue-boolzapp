@@ -160,8 +160,28 @@ var app = new Vue({
             }
         },
 
-        changeVisible() {
-        }
+        dropAppear(index) {
+            const dropElement = document.querySelectorAll(".dropdown");
 
+
+            console.log(dropElement);
+
+            for (let i = 0; i < dropElement.length; i++) {
+                const currentElement = dropElement[i];
+
+                if (i === index) {
+                    if (currentElement.style.display === "none") {
+                        currentElement.style.display = "block";
+                    } else {
+                        currentElement.style.display = "none";
+                    }
+                }
+            }
+
+        },
+
+        deleteMsg(message) {
+            message.text = "Questo messaggio è stato eliminato";
+        }
     }
 });
