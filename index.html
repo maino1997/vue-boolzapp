@@ -25,7 +25,11 @@
                 <div class="central-inner-content">
                     <div class="container-fluid">
                         <div class="row p-0 h-100">
+
+                            <!-- RIGHT-COLUMN  -->
                             <div class="col-4">
+
+                                <!-- Header  -->
                                 <section class="inner-header d-flex justify-content-between">
                                     <div class="user-info">
                                         <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar_1" class="icon m-2">
@@ -39,6 +43,7 @@
                                     </div>
                                 </section>
 
+                                <!-- Deskot notifications and Filter  -->
                                 <div class="inner-header-notes d-flex ">
                                     <img src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-bell-icon-png-image_927119.jpg"
                                         alt="bell" class="icon m-2">
@@ -55,6 +60,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Contacts List  -->
                                 <section class="messages-section px-2">
                                     <div v-for="(item, index) in contacts" @click="currentIndexUpdate(index , item)"
                                         v-if="isVisible(item)" class="contact-tag">
@@ -68,7 +74,10 @@
                             </div>
 
 
+                            <!-- RIGHT COLUMN  -->
                             <div class="col-8">
+
+                                <!-- Header  -->
                                 <section class="inner-header d-flex justify-content-between">
                                     <div v-for="(contact, index) in contacts" v-if="showContact(index)"
                                         class="user-info d-flex align-items-center">
@@ -86,6 +95,7 @@
                                     </div>
                                 </section>
 
+                                <!-- Message-body section  -->
                                 <section class="message-body">
                                     <div class="container">
                                         <div v-for="(message , index) in contacts[currentIndex].messages" class="row">
@@ -103,10 +113,10 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </section>
+
+                                <!-- Footer  -->
                                 <footer class="d-flex align-items-center justify-content-between">
                                     <i class="fas fa-smile"></i>
                                     <input class="px-3" type="text" placeholder="Inserisci un messaggio qui"
