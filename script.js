@@ -241,8 +241,11 @@ var app = new Vue({
         },
 
         // Change the text in the message to tell that is was deleted 
-        deleteMsg(message) {
+        deleteMsg(message, index) {
             message.text = "Questo messaggio è stato eliminato";
+
+            // Remove completly the message from the array 
+            // this.contacts[this.currentIndex].messages.splice(index, 1);
         }
     }
 });

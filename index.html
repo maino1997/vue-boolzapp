@@ -107,7 +107,8 @@
                                                     <div class="dropdown" :class="{show : isShow(message)}">
                                                         <ul class="list-unstyled p-2">
                                                             <li class="delete">Info Messaggio</li>
-                                                            <li @click="deleteMsg(message)" class="delete">Cancella
+                                                            <li @click="deleteMsg(message, index)" class="delete">
+                                                                Cancella
                                                                 Messaggio</li>
                                                         </ul>
                                                     </div>
